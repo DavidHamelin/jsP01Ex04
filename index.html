@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>JS - Exercice_4</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <form method="get" action="">
+        <div><label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname" /></div>
+        <div><label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname" /></div>
+        <div><label for="city">Ville : </label><input type="text" name="city" id="city" /></div>
+        <div><input type="submit" onclick="allValues()" name="submit" id="submit" value="valider" /></div> <!-- "onsubmit" marche aussi-->
+    </form>
+    <script>
+        function allValues() { // noms de fonctions ideals : getValues ou showInfos
+            var lastName = document.getElementById('lastname').value;
+            var firstName = document.getElementById('firstname').value;
+            var city = document.getElementById('city').value;
+            var regexName = /^[a-zéëê'è-]+$/i;
+            if (regexName.test(lastName) == false)
+            {
+                alert('Nom non valide')
+            }
+            else if (regexName.test(firstName) == false)
+            {
+                alert('prénom non valide')
+            }
+            else if (regexName.test(city) == false)
+            {
+                alert('Ville non valide')
+            }
+            else
+            {
+                alert(`Nom : ${lastName} \nPrénom : ${firstName} \nVille : ${city} `);
+            }
+        }
+    </script>
+</body>
+</html>
